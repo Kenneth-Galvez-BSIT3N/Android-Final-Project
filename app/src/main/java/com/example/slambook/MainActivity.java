@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
         //This is practice only
         // This is the second comment
+        //This is the third comment
     }
 }
