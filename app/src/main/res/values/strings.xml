@@ -2,6 +2,9 @@
     <string name="app_name">Slambook</string>
     <string name="username">Username</string>
     <string name="Password">Password</string>
+    <string name="ConPassword">Confirm Password</string>
+    <string name="FullName">Full Name</string>
+    <string name="Answer">Your Answer</string>
     <string-array name="questions">
         <item>Question 1</item>
         <item>Question 2</item>
