@@ -1,5 +1,6 @@
 package com.example.slambook;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,6 +13,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText fullNameField, usernameField, passwordField, conPasswordField, answerField;
@@ -20,6 +26,10 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     private Spinner spnrQuestion;
 
     private RegisterFunctions functions;
+
+    private DatabaseReference dbRef;
+
+    private User newUser = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,26 +40,60 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     private void init() {
+        dbRef =  FirebaseDatabase.getInstance().getReference();
         functions = new RegisterFunctions();
-        fullNameField = findViewById(R.id.edtFullName);
-        usernameField = findViewById(R.id.edtUsername);
-        passwordField = findViewById(R.id.edtPassword);
-        conPasswordField = findViewById(R.id.edtConPassword);
-        answerField = findViewById(R.id.edtAnswer);
         btnRegister = findViewById(R.id.btnRegister);
         btnCancel = findViewById(R.id.btnCancelRed);
         txtSignIn = findViewById(R.id.txtSignIn);
+
         spnrQuestion = findViewById(R.id.spnrQuestion);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.questions, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnrQuestion.setAdapter(adapter);
-        spnrQuestion.setOnItemSelectedListener(this);
+        spnrQuestion.setOnItemSelectedListener(Register.this);
+//        if(passwordField.getText().toString().equals(conPasswordField.getText().toString())){
 
+//        }
+//        else{
+//            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
+//        }
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                functions.Register(getApplicationContext());
+                fullNameField = (EditText) findViewById(R.id.edtFullName);
+                usernameField = findViewById(R.id.edtUsername);
+                passwordField = findViewById(R.id.edtPassword);
+                conPasswordField = findViewById(R.id.edtConPassword);
+                answerField = findViewById(R.id.edtAnswer);
+
+
+
+                newUser.setUsername(usernameField.getText().toString());
+                newUser.setPassword(passwordField.getText().toString());
+                newUser.setFullname(fullNameField.getText().toString());
+                newUser.setQuestion(spnrQuestion.getSelectedItem().toString());
+                newUser.setAnswer(answerField.getText().toString());
+
+//                Toast.makeText(Register.this, newUser.getUsername()+"\n"+newUser.getFullname()+"\n"+newUser.getPassword()+"\n"+newUser.getAnswer(), Toast.LENGTH_SHORT).show();
+
+//                Toast.makeText(Register.this, usernameField.getText().toString(), Toast.LENGTH_SHORT).show();
+                String id = newUser.getUsername().replaceAll("\\s+","_");
+                Toast.makeText(getApplicationContext(), newUser.getUsername(), Toast.LENGTH_SHORT).show();
+
+                    dbRef.child("users").child(id).setValue(newUser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(Register.this, "Successful", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Register.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+//                functions.Register(getApplicationContext());
             }
         });
 
@@ -57,6 +101,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View v) {
                 finish();
+
             }
         });
 

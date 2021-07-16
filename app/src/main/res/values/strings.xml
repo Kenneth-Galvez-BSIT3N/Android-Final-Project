@@ -5,6 +5,10 @@
     <string name="ConPassword">Confirm Password</string>
     <string name="FullName">Full Name</string>
     <string name="Answer">Your Answer</string>
+    <string name="enter_username">Please enter your username.</string>
+    <string name="back_to_sign_in">Back to sign in.</string>
+    <string name="answer_sec_question">Answer this question.</string>
+    <string name="your_answer">Your answer here.</string>
     <string-array name="questions">
         <item>Question 1</item>
         <item>Question 2</item>
