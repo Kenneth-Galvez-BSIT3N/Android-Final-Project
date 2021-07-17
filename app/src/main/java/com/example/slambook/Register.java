@@ -51,12 +51,6 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnrQuestion.setAdapter(adapter);
         spnrQuestion.setOnItemSelectedListener(Register.this);
-//        if(passwordField.getText().toString().equals(conPasswordField.getText().toString())){
-
-//        }
-//        else{
-//            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
-//        }
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,33 +61,47 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 conPasswordField = findViewById(R.id.edtConPassword);
                 answerField = findViewById(R.id.edtAnswer);
 
+                EditText[] editTexts = {fullNameField, usernameField, passwordField, conPasswordField, answerField};
+
+                boolean checker = true;
+                for (EditText edt: editTexts) {
+                    if(!checkIfEmpty(edt)){
+                        checker = false;
+                        break;
+                    }
+                }
+
+                if(passwordField.getText().toString().equals(conPasswordField.getText().toString()) && checker){
+                    newUser.setUsername(usernameField.getText().toString());
+                    newUser.setPassword(passwordField.getText().toString());
+                    newUser.setFullname(fullNameField.getText().toString());
+                    newUser.setQuestion(spnrQuestion.getSelectedItem().toString());
+                    newUser.setAnswer(answerField.getText().toString());
 
 
-                newUser.setUsername(usernameField.getText().toString());
-                newUser.setPassword(passwordField.getText().toString());
-                newUser.setFullname(fullNameField.getText().toString());
-                newUser.setQuestion(spnrQuestion.getSelectedItem().toString());
-                newUser.setAnswer(answerField.getText().toString());
-
-//                Toast.makeText(Register.this, newUser.getUsername()+"\n"+newUser.getFullname()+"\n"+newUser.getPassword()+"\n"+newUser.getAnswer(), Toast.LENGTH_SHORT).show();
-
-//                Toast.makeText(Register.this, usernameField.getText().toString(), Toast.LENGTH_SHORT).show();
-                String id = newUser.getUsername().replaceAll("\\s+","_");
-                Toast.makeText(getApplicationContext(), newUser.getUsername(), Toast.LENGTH_SHORT).show();
+                    String id = newUser.getUsername().replaceAll("\\s+","_");
+                    Toast.makeText(getApplicationContext(), newUser.getUsername(), Toast.LENGTH_SHORT).show();
 
                     dbRef.child("users").child(id).setValue(newUser).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Register.this, "Successful", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Register.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Unsiccessful", Toast.LENGTH_SHORT).show();
                         }
                     });
 
-//                functions.Register(getApplicationContext());
+                }else if(!checker){
+                    Toast.makeText(Register.this, "Fields must not be empty.", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Register.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
@@ -115,11 +123,19 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public boolean checkIfEmpty(EditText edt){
+        if(!edt.getText().toString().equals(null) && !edt.getText().toString().equals("")){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

@@ -49,7 +49,7 @@ public class ForgotPass extends AppCompatActivity {
         btnChangePass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(passwordField.getText().toString().equals(conPasswordField.getText().toString())){
+                if(passwordField.getText().toString().equals(conPasswordField.getText().toString()) && !passwordField.getText().toString().equals("")){
 
                     rbRef.child("users").child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                         @Override
@@ -63,6 +63,7 @@ public class ForgotPass extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(ForgotPass.this, "Successful", Toast.LENGTH_SHORT).show();
+                                    finish();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -73,6 +74,8 @@ public class ForgotPass extends AppCompatActivity {
                         }
                     });
 
+                }else if(passwordField.getText().toString().equals("")){
+                    Toast.makeText(ForgotPass.this, "Password cannot be empty.", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ForgotPass.this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
                 }

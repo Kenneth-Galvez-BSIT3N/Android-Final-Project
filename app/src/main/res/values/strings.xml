@@ -10,10 +10,10 @@
     <string name="answer_sec_question">Answer this question.</string>
     <string name="your_answer">Your answer here.</string>
     <string-array name="questions">
-        <item>Question 1</item>
-        <item>Question 2</item>
-        <item>Question 3</item>
-        <item>Question 4</item>
-        <item>Question 5</item>
+        <item>What primary school did you attend?</item>
+        <item>In what town or city did your parents meet?</item>
+        <item>What time of the day were you born?</item>
+        <item>In what town or city was your first full time job?</item>
+        <item>What is you first pet\'s name?</item>
     </string-array>
 </resources>
