@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".AddEntry">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+
+                />
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/btnTakePicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#5C93EC"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:text="Take Picture" />
+                <EditText
+                    android:id="@+id/edt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:inputType="textPersonName"
+                    android:hint="Name" />
+
+                <EditText
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:id="@+id/edt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Remark" />
+
+                <EditText
+                    android:id="@+id/edt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Birthday"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white">
+
+                </TextView>
+
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female" android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white" />
+
+                    <RadioButton
+                        android:id="@+id/rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Others"  android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"/>
+                </RadioGroup>
+                <EditText
+                    android:id="@+id/othergender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:visibility="gone"
+                    android:inputType="textPersonName"
+                    android:hint="Gender"  android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"/>
+                <EditText
+                    android:id="@+id/edt4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Address"  android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"/>
+
+                <EditText
+                    android:id="@+id/edt5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Contact Number" android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white" />
+
+                <EditText
+                    android:id="@+id/edt6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Hobbies" android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white" />
+
+                <EditText
+                    android:id="@+id/edt7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Quote you live by"  android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white"/>
+                <EditText
+                    android:id="@+id/edt8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Name of your crush" android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/white" />
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#5C93EC"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:text="Add Entry" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C41F9E"
+                    android:textColor="@color/white"
+                    android:text="Cancel" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

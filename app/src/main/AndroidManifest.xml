@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Slambook">
-        <activity android:name=".AnswerQuestion"></activity>
+        <activity android:name=".EditEntry"></activity>
+        <activity android:name=".AddEntry" />
+        <activity android:name=".AnswerQuestion" />
         <activity android:name=".EnterUsername" />
         <activity android:name=".ForgotPass" />
         <activity android:name=".Register" />

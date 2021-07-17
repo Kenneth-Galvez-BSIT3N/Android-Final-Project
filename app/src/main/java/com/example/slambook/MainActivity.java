@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     User newUser = new User();
 
+
+    public static String username_;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                             //remove this *****
                             Toast.makeText(MainActivity.this, "correct input", Toast.LENGTH_SHORT).show();
                             //******
+
+                            username_ = newUser.getUsername();
 
                             //Use this when view entry activity is made ***
 //                            Intent gotoViewEntry = new Intent(getApplicationContext(), ViewEntry.class);
