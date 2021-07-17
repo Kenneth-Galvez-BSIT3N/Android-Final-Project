@@ -63,7 +63,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if(task.getResult().child("username").getValue().toString().equals(newUser.getUsername()) && task.getResult().child("password").getValue().toString().equals(newUser.getPassword())){
+
+                            //remove this *****
                             Toast.makeText(MainActivity.this, "correct input", Toast.LENGTH_SHORT).show();
+                            //******
+
+                            //Use this when view entry activity is made ***
+//                            Intent gotoViewEntry = new Intent(getApplicationContext(), ViewEntry.class);
+//                            startActivity(gotoViewEntry);
+                            //***
+
+
                         }else{
                             Toast.makeText(MainActivity.this, "Incorrect credentials!", Toast.LENGTH_SHORT).show();
                         }
