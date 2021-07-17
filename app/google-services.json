@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1035714554393",
+    "firebase_url": "https://mad2-slambook-project-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mad2-slambook-project",
+    "storage_bucket": "mad2-slambook-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035714554393:android:f59ac378f1ef4b20155888",
+        "android_client_info": {
+          "package_name": "com.example.slambook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035714554393-gvhpndabriq87jioqbmfrqpc8u91r6bo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.slambook",
+            "certificate_hash": "a2730550f6464eeaa175222ca236f055321971ad"
+          }
+        },
+        {
+          "client_id": "1035714554393-1i6adb6cb7adehlakcjhic9vkvnd8v8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxc5itUMIn1rhBe8hQiKiU1KpQyEpKKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035714554393-1i6adb6cb7adehlakcjhic9vkvnd8v8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
