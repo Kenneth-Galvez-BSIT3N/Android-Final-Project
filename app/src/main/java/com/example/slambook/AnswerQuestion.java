@@ -44,8 +44,6 @@ public class AnswerQuestion extends AppCompatActivity {
         edtYourQuestion = findViewById(R.id.edtYourQuestion);
 
 
-
-
         findViewById(R.id.btnEnterAns).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

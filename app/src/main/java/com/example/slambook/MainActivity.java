@@ -74,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
                             username_ = newUser.getUsername();
 
                             //Use this when view entry activity is made ***
-//                            Intent gotoViewEntry = new Intent(getApplicationContext(), ViewEntry.class);
-//                            startActivity(gotoViewEntry);
+                            Intent gotoViewEntry = new Intent(getApplicationContext(), ViewEntry.class);
+                            gotoViewEntry.putExtra("user", username_);
+                            startActivity(gotoViewEntry);
                             //***
 
 

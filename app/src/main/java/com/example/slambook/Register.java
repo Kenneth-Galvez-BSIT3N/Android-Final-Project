@@ -91,7 +91,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Register.this, "Unsiccessful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
                         }
                     });
 
