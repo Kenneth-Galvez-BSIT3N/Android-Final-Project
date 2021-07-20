@@ -65,6 +65,9 @@ public class AddEntry extends AppCompatActivity {
     HashMap<String, Object> map = new HashMap<>();
     long maxid=0;
 
+
+    String username = MainActivity.username_;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -268,7 +271,9 @@ public class AddEntry extends AppCompatActivity {
 
                         Toast.makeText(c, "Successful", Toast.LENGTH_LONG).show();
                         setResult(RESULT_OK);
-                        // finish();
+                         finish();
+                        Intent goBack = new Intent(getApplicationContext(), ViewEntry.class);
+                        startActivity(goBack);
 
 
                     } else {

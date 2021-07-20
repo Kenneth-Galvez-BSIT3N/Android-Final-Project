@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         if(task.getResult().child("username").getValue().toString().equals(newUser.getUsername()) && task.getResult().child("password").getValue().toString().equals(newUser.getPassword())){
 
                             //remove this *****
-                            Toast.makeText(MainActivity.this, "correct input", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MainActivity.this, "correct input", Toast.LENGTH_SHORT).show();
                             //******
 
                             username_ = newUser.getUsername();
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent gotoViewEntry = new Intent(getApplicationContext(), ViewEntry.class);
                             gotoViewEntry.putExtra("user", username_);
                             startActivity(gotoViewEntry);
+                            finish();
                             //***
 
 

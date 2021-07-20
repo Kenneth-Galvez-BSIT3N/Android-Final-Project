@@ -9,6 +9,7 @@
     <string name="back_to_sign_in">Back to sign in.</string>
     <string name="answer_sec_question">Answer this question.</string>
     <string name="your_answer">Your answer here.</string>
+    <string name="addEntry">Add Entry</string>
     <string-array name="questions">
         <item>What primary school did you attend?</item>
         <item>In what town or city did your parents meet?</item>
